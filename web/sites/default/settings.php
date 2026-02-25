@@ -17,3 +17,5 @@ $settings['config_sync_directory'] = 'sites/default/files/config_uT6SPUkeFxn23HC
 $settings['trusted_host_patterns'] = [
   '^localhost$',
 ];
+
+$settings['file_private_path'] = 'sites/default/private';
