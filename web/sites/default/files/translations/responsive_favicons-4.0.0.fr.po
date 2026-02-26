@@ -1,0 +1,26 @@
+# French translation of Responsive Favicons (4.0.0)
+# Copyright (c) 2025 by the French translation team
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Responsive Favicons (4.0.0)\n"
+"POT-Creation-Date: 2025-09-09 16:41+0000\n"
+"PO-Revision-Date: YYYY-mm-DD HH:MM+ZZZZ\n"
+"Language-Team: French\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n>1);\n"
+
+msgid "User interface"
+msgstr "Interface utilisateur"
+msgid "Tags"
+msgstr "Étiquettes"
+msgid "Path"
+msgstr "Chemin"
+msgid "The file could not be created."
+msgstr "Le fichier n'a pas pu être créé."
+msgid "About"
+msgstr "À propos"
+msgid "Cannot extract %file, not a valid archive."
+msgstr "Impossible d'extraire %file, ce n'est pas une archive valide."

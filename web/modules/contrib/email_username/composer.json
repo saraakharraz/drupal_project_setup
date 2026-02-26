@@ -1,0 +1,10 @@
+{
+    "name": "drupal/email_username",
+    "description": "Use the user's email address as the username.",
+    "type": "drupal-module",
+    "require": {
+        "drupal/core": "^10.3 || ^11",
+        "egulias/email-validator": "^4.0"
+    },
+    "license": "GPL-2.0-or-later"
+}

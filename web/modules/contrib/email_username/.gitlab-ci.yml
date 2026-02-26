@@ -1,0 +1,36 @@
+image: nixos/nix
+
+workflow:
+  rules:
+    - if: $CI_MERGE_REQUEST_IID
+    - if: $CI_PIPELINE_SOURCE == 'merge_request_event'
+    - if: $CI_COMMIT_TAG
+    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
+
+stages:
+  - lint_test
+
+lint-test:
+  stage: lint_test
+  script:
+    # Support flakes.
+    - echo "experimental-features = nix-command flakes" >> /etc/nix/nix.conf
+    - echo "accept-flake-config = true" >> /etc/nix/nix.conf
+
+    - echo "Install dependencies & setup Drupal"
+    - nix develop ".#$DEVSHELL" -c setup-drupal
+
+    - echo "Run PHPCS"
+    - nix develop ".#$DEVSHELL" -c composer phpcs
+
+    - echo "Run PHPStan"
+    - nix develop ".#$DEVSHELL" -c composer phpstan
+
+    - echo "Run PHPUnit"
+    - |
+      nix develop ".#$DEVSHELL" -c composer webserver &
+      nix develop ".#$DEVSHELL" -c composer unit
+
+  parallel:
+    matrix:
+      - DEVSHELL: [php81_drupal103, php83_drupal103, php84_drupal104, php83_drupal110, php84_drupal111]

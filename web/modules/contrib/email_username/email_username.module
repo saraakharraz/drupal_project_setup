@@ -1,0 +1,38 @@
+<?php
+
+/**
+ * @file
+ * Module file.
+ */
+
+declare(strict_types=1);
+
+use Drupal\Core\Entity\EntityTypeInterface;
+use Drupal\Core\Hook\Attribute\LegacyHook;
+use Drupal\email_username\Hook\UserEntityHooks;
+use Drupal\email_username\Hook\UserFormHooks;
+use Drupal\user\UserInterface;
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+#[LegacyHook]
+function email_username_form_user_form_alter(array &$form) {
+  \Drupal::service(UserFormHooks::class)->userFormAlter($form);
+}
+
+/**
+ * Implements hook_ENTITY_ID_presave().
+ */
+#[LegacyHook]
+function email_username_user_presave(UserInterface $user) {
+  \Drupal::service(UserEntityHooks::class)->userPresave($user);
+}
+
+/**
+ * Implements hook_entity_base_field_info_alter().
+ */
+#[LegacyHook]
+function email_username_entity_base_field_info_alter(&$fields, EntityTypeInterface $entity_type) {
+  \Drupal::service(UserEntityHooks::class)->userBaseFieldConstraintAlter($fields, $entity_type);
+}

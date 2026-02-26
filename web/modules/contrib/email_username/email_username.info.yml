@@ -1,0 +1,12 @@
+name: E-Mail Username
+type: module
+description: Use the e-mail address as the accout username.
+core_version_requirement: ^10.3 || ^11
+package: User
+dependencies:
+  - drupal:user
+
+# Information added by Drupal.org packaging script on 2025-01-17
+version: '1.1.0'
+project: 'email_username'
+datestamp: 1737106392

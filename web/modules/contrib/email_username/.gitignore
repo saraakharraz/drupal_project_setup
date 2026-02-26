@@ -1,0 +1,5 @@
+/vendor/
+/web/
+/composer.devenv.json
+/composer.devenv.lock
+/recipes/

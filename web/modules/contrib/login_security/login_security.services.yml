@@ -1,0 +1,5 @@
+services:
+  login_security.ban:
+    class: Drupal\login_security\Service\Ban
+    arguments:
+      - '@service_container'

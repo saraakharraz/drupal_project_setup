@@ -1,0 +1,11 @@
+name: Login Security
+description: 'Enable security options in the login flow of the site.'
+type: module
+package: Security
+core_version_requirement: ^8.9 || ^9 || ^10 || ^11
+configure: login_security.settings
+
+# Information added by Drupal.org packaging script on 2026-02-17
+version: '2.0.7'
+project: 'login_security'
+datestamp: 1771354459

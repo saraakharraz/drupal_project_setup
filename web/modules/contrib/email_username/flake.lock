@@ -1,0 +1,92 @@
+{
+  "nodes": {
+    "devenv": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ],
+        "utils": "utils"
+      },
+      "locked": {
+        "lastModified": 1733991946,
+        "narHash": "sha256-S0e/pO0DbP0RMTlaeqwOK7oTPuHmvqs5K328U8skn10=",
+        "ref": "1.x",
+        "rev": "0a1e4fcae40e3dd50495d72e02e8006ff9ede0cf",
+        "revCount": 18,
+        "type": "git",
+        "url": "https://git.drupalcode.org/project/module_devenv.git"
+      },
+      "original": {
+        "ref": "1.x",
+        "type": "git",
+        "url": "https://git.drupalcode.org/project/module_devenv.git"
+      }
+    },
+    "nixpkgs": {
+      "locked": {
+        "lastModified": 1733808091,
+        "narHash": "sha256-KWwINTQelKOoQgrXftxoqxmKFZb9pLVfnRvK270nkVk=",
+        "owner": "nixos",
+        "repo": "nixpkgs",
+        "rev": "a0f3e10d94359665dba45b71b4227b0aeb851f8e",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nixos",
+        "ref": "nixos-24.11",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "root": {
+      "inputs": {
+        "devenv": "devenv",
+        "nixpkgs": "nixpkgs",
+        "utils": "utils_2"
+      }
+    },
+    "utils": {
+      "inputs": {
+        "nixpkgs": [
+          "devenv",
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1729153754,
+        "narHash": "sha256-vei77VM9aLbcr/RdpYBVYFF0rJs2dct1G7zVNT5BK1w=",
+        "owner": "wunderwerkio",
+        "repo": "nix-utils",
+        "rev": "29c8fa9d92648940441e3e4c7469970173b85c49",
+        "type": "github"
+      },
+      "original": {
+        "owner": "wunderwerkio",
+        "repo": "nix-utils",
+        "type": "github"
+      }
+    },
+    "utils_2": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1729153754,
+        "narHash": "sha256-vei77VM9aLbcr/RdpYBVYFF0rJs2dct1G7zVNT5BK1w=",
+        "owner": "wunderwerkio",
+        "repo": "nix-utils",
+        "rev": "29c8fa9d92648940441e3e4c7469970173b85c49",
+        "type": "github"
+      },
+      "original": {
+        "owner": "wunderwerkio",
+        "repo": "nix-utils",
+        "type": "github"
+      }
+    }
+  },
+  "root": "root",
+  "version": 7
+}

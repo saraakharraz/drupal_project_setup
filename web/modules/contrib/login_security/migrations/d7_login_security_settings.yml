@@ -1,0 +1,59 @@
+id: d7_login_security_settings
+label: Login Security settings
+migration_tags:
+  - Drupal 7
+  - Configuration
+migration_dependencies:
+  required:
+    - d7_user
+source:
+  plugin: variable
+  variables:
+    - login_security_track_time
+    - login_security_user_wrong_count
+    - login_security_host_wrong_count
+    - login_security_host_wrong_count_hard
+    - login_security_activity_threshold
+    - login_security_disable_core_login_error
+    - login_security_notice_attempts_available
+    - login_security_last_login_timestamp
+    - login_security_last_access_timestamp
+    - login_security_notice_attempts_message
+    - login_security_host_soft_banned
+    - login_security_host_hard_banned
+    - login_security_user_blocked
+    - login_security_user_blocked_email_subject
+    - login_security_user_blocked_email_body
+    - login_security_login_activity_email_subject
+    - login_security_login_activity_email_body
+    - login_security_user_blocked_email_user
+    - login_security_login_activity_email_user
+process:
+  track_time: login_security_track_time
+  user_wrong_count: login_security_user_wrong_count
+  host_wrong_count: login_security_host_wrong_count
+  host_wrong_count_hard: login_security_host_wrong_count_hard
+  activity_threshold: login_security_activity_threshold
+  disable_core_login_error: login_security_disable_core_login_error
+  notice_attempts_available: login_security_notice_attempts_available
+  last_login_timestamp: login_security_last_login_timestamp
+  last_access_timestamp: login_security_last_access_timestamp
+  notice_attempts_message: login_security_notice_attempts_message
+  host_soft_banned: login_security_host_soft_banned
+  host_hard_banned: login_security_host_hard_banned
+  user_blocked: login_security_user_blocked
+  user_blocked_email_subject: login_security_user_blocked_email_subject
+  user_blocked_email_body: login_security_user_blocked_email_body
+  login_activity_email_subject: login_security_login_activity_email_subject
+  login_activity_email_body: login_security_login_activity_email_body
+  user_blocked_notification_emails:
+    - plugin: get
+      source: login_security_user_blocked_email_user
+    - plugin: login_security_username_to_email
+  login_activity_notification_emails:
+    - plugin: get
+      source: login_security_login_activity_email_user
+    - plugin: login_security_username_to_email
+destination:
+  plugin: config
+  config_name: login_security.settings

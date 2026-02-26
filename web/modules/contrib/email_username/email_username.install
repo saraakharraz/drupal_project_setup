@@ -1,0 +1,22 @@
+<?php
+
+/**
+ * @file
+ * Install file.
+ */
+
+declare(strict_types=1);
+
+/**
+ * Implements hook_install().
+ */
+function email_username_install(): void {
+  $storage = \Drupal::entityTypeManager()->getStorage('user');
+
+  /** @var \Drupal\user\UserInterface $user */
+  foreach ($storage->loadMultiple() as $user) {
+    if (!empty($user->getEmail())) {
+      $user->setUsername($user->getEmail())->save();
+    }
+  }
+}
